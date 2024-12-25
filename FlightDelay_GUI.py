@@ -6,7 +6,7 @@ matplotlib.use('TkAgg')
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
 
-# Objective Function
+# Objective Function (Rescheduling Function)
 def Objective_Function(initial_fare, initial_cost, initial_takeoff_time, initial_duration, initial_fki_cost, pop, dim_cost, trp):
     objective_pop = [[0, 0] for _ in range(pop)]    
     for i in range(pop):

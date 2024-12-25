@@ -8,9 +8,6 @@ import matplotlib.pyplot as plt
 # 1. Input instructions
 pop = int(input("Enter the Number of Different Types of Flights Available: "))
 dim_cost = int(input("Enter the Total Number of Flight Legs Available: "))
-#Fare = int(input("Enter the Fare charged in Cancelled Flight: "))
-#Takeoff_Time = float(input("Enter the Takeoff Time of the Cancelled Flight (In 24:00 hrs format like... 6:30 PM as 18.5, 9:45 AM as 9.75) : "))
-#Duration = float(input("Enter the Flight Duration of the Cancelled Flight (In Hours) : "))
 trp = int(input("Enter the Number of Redirected Passengers: "))
 itr = int(input("Enter the Number of Iteration: "))
 constant = 0.5
@@ -26,12 +23,6 @@ initial_takeoff_time = (np.sort(np.random.rand(pop, 2) * 24, axis=1)).astype(flo
 experimetal_takeoff_time = np.copy(initial_takeoff_time)
 initial_duration = (np.random.rand(pop, 2) * 22 + 2).astype(float)
 experimetal_duration = np.copy(initial_duration)
-# np.set_printoptions(precision=2)
-# print("\nInitial Fare:\n", initial_fare)
-# print("\nInitial Takeoff Time:\n", initial_takeoff_time)
-# print("\nInitial Duration:\n", initial_duration)
-# print("\nInitial Cost:\n", initial_cost)
-# print("\nInitial fki Cost:\n", initial_fki_cost)
 
 
 # 3. Objective Function f(x) = min ( ∑k∈K ∑i∈L (ck,i . fk,i) + ∑p∈P ∑r∈P (farep − brp . farer) . trp)
@@ -145,7 +136,6 @@ for count in range(itr):
             z = 1
         else:
             z = 0
-            # print("Improving Phase Rejected.")
 
 
     z = 0
@@ -167,7 +157,6 @@ for count in range(itr):
             z = 1
         else:
             z = 0
-            # print("Acquiring Phase Rejected.")
 
     print(f"gbest at Iteration {count + 1} : {gbest_ap}")
     gbest_values.append(gbest_ap)
